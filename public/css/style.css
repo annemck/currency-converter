@@ -1,0 +1,12 @@
+ul {
+  list-style: none;
+  columns: 2;
+}
+
+h4 {
+  padding: 1em;
+}
+
+p {
+  padding: 1em;
+}

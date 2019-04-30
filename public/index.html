@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="./js/bundle.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Currency Exchange Rates</title>
+  </head>
+  <body>
+    <div id="app">
+      
+      <h2>Check an Exchange Rate</h2>
+      <input type="number" v-model.number="checkAmount" v-model.number="oldCheckAmount">
+      <label for="">From: </label>
+      <select v-model.number="fromValue">
+        <option value="1.00">EUR</option>
+        <option v-for="(rate, key) in allRates" v-bind:value="rate">{{key}}</option>
+      </select>
+      <label for="">To: </label>
+      <select v-model.number="toValue">
+        <option value="1.00">EUR</option>
+        <option v-for="(rate, key) in allRates" v-bind:value="rate">{{key}}</option>
+      </select>
+      <button type="button" name="button" v-on:click="checkCurrency" >Check Rate</button>
+      
+      
+      
+      <h3 v-if="newRate">This amounts to: {{newRate}}</h3>
+      
+      <h4>Current Exchange Rates Vs Euro</h4>
+      <ul>
+        <li v-for="(rate, key) in allRates">{{key}}: {{rate}}</li>
+      </ul>
+      
+      <p>All rates correct as of {{date}}</p>
+      
+      
+    </div>
+  </body>
+</html>
